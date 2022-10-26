@@ -1,0 +1,32 @@
+{
+    "users":[
+        {
+            "name": "John Doe",
+            "adress": "Great St. 5, London",
+            "email": "john.doe@example.com",
+            "phone": "6665554467",
+            "id": 1
+        },
+        {
+            "name": "Martha Smith",
+            "adress": "Bowinstreen 14, Colorado",
+            "email": "martha47@yahoo.com",
+            "phone": "5577382",
+            "id": 2
+        },
+        {
+            "name": "Peter Clark",
+            "adress": "California Road 10, Dublin",
+            "email": "p.clark@forusers.net",
+            "phone": "567567889",
+            "id": 3
+        },
+        {
+            "name": "Kate Milbush",
+            "adress": "Chilli Square 109, Washington",
+            "email": "kate96@gmail.com",
+            "phone": "1231241458",
+            "id": 4
+        }
+    ]
+}
