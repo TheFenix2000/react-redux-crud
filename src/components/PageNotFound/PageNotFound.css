@@ -1,0 +1,9 @@
+.test {
+    border: 1px solid #32174d !important;
+}
+.test:hover {
+    background-color: #32174d !important;
+}
+.t {
+    color:#32174d !important;
+}

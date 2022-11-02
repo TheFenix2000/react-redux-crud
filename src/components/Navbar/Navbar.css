@@ -1,6 +1,13 @@
 .navbar-nav a {
     font-size: 18px;
 }
-.container a{
-    color: #32174d;
+.logo{
+    color: #32174d !important;
+}
+.te {
+    background-color: #32174d !important;
+    color: white !important;
+}
+.te:hover {
+    background-color: #43285e !important;
 }

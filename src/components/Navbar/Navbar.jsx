@@ -9,7 +9,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg bg-light py-3 shadow-sm fixed-top">
         <div className="container">
-          <Link className="navbar-brand fw-bold fs-4" to="/">
+          <Link className="navbar-brand fw-bold fs-4 logo" to="/">
             CRUD App
           </Link>
           {/* <button
@@ -86,6 +86,11 @@ function Navbar() {
               </Link>
             </div>
           </div> */}
+          <div className="buttons">
+            <Link to="/addUser" className="btn te">
+              <i className="fa fa-light fa-user-plus me-1"></i> Add user
+            </Link>
+          </div>
         </div>
       </nav>
     </div>
