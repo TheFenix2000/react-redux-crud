@@ -10,7 +10,9 @@ import Paper from "@mui/material/Paper";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser, loadUsers } from "../../redux/actions";
 import { Box, Button, ButtonGroup, Modal, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 function Home() {
+  let navigate = useNavigate();
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: "#32174d",
@@ -143,7 +145,11 @@ function Home() {
                       aria-label="outlined button group"
                       sx={{ color: "#32174d" }}
                     >
-                      <Button sx={styles.edit} className="py-2">
+                      <Button
+                        sx={styles.edit}
+                        className="py-2"
+                        onClick={() => navigate(`/editUser/${user.id}`)}
+                      >
                         <i className="fa fa-solid fa-pencil"></i>
                       </Button>
                       <Button

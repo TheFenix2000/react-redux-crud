@@ -7,13 +7,14 @@ import {
   Alert,
   Collapse,
 } from "@mui/material";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { addUser } from "../../redux/actions";
-import "./AddUser.css";
-function AddUser() {
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getSingleUser, updateUser } from "../../redux/actions";
+import "./EditUser.css";
+function EditUser() {
   let navigate = useNavigate();
+  let { id } = useParams();
   const [state, setState] = useState({
     name: "",
     address: "",
@@ -40,6 +41,15 @@ function AddUser() {
       },
     },
   };
+  const { user } = useSelector((state) => state.data);
+  useEffect(() => {
+    dispatch(getSingleUser(id));
+  }, []);
+  useEffect(() => {
+    if (user) {
+      setState({ ...user });
+    }
+  }, [user]);
 
   const handleInputChange = (e) => {
     let { name, value } = e.target;
@@ -55,7 +65,7 @@ function AddUser() {
         setErr("");
       }, 2000);
     } else {
-      dispatch(addUser(state));
+      dispatch(updateUser(state, id));
       setErr("");
       setSuccess(true);
       setTimeout(() => {
@@ -76,7 +86,7 @@ function AddUser() {
       >
         <Paper className="bg-light d-flex flex-colum justify-content-center align-center">
           <div className="d-flex flex-column align-items-center justify-content-start px-3 py-3">
-            <h2>Add User</h2>
+            <h2>Edit User</h2>
             <Stack sx={{ position: "fixed" }} spacing={2}>
               <Collapse in={err.length > 0 || success}>
                 {err ? (
@@ -85,7 +95,7 @@ function AddUser() {
                   </Alert>
                 ) : success ? (
                   <Alert variant="filled" severity="success">
-                    User added successfully! Redirecting...
+                    User updated successfully! Redirecting...
                   </Alert>
                 ) : null}
               </Collapse>
@@ -94,7 +104,7 @@ function AddUser() {
               id="outlined-basic"
               label="Username"
               placeholder="Enter username"
-              value={name}
+              value={name || ""}
               name="name"
               type="text"
               className="fill"
@@ -104,7 +114,7 @@ function AddUser() {
               id="outlined-basic"
               label="Phone number"
               placeholder="Enter phone number"
-              value={phone}
+              value={phone || ""}
               name="phone"
               className="fill"
               type="number"
@@ -114,7 +124,7 @@ function AddUser() {
               id="outlined-basic"
               label="Address"
               placeholder="Enter address"
-              value={address}
+              value={address || ""}
               name="address"
               className="fill"
               type="text"
@@ -124,14 +134,14 @@ function AddUser() {
               id="outlined-basic"
               label="Email"
               placeholder="Enter email"
-              value={email}
+              value={email || ""}
               name="email"
               className="fill"
               type="email"
               onChange={handleInputChange}
             />
             <Button variant="contained" sx={styles.add} type="submit">
-              Submit
+              Update
             </Button>
           </div>
         </Paper>
@@ -140,4 +150,4 @@ function AddUser() {
   );
 }
 
-export default AddUser;
+export default EditUser;

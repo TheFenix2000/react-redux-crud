@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./Navbar.css";
 
 function Navbar() {
-  //   const location = useLocation();
+  const location = useLocation();
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light py-3 shadow-sm fixed-top">
@@ -86,11 +86,21 @@ function Navbar() {
               </Link>
             </div>
           </div> */}
-          <div className="buttons">
-            <Link to="/addUser" className="btn te">
-              <i className="fa fa-light fa-user-plus me-1"></i> Add user
-            </Link>
-          </div>
+          {location.pathname !== "/addUser" ? (
+            <div className="buttons">
+              <Link to="/addUser" className="btn te">
+                <i className="fa fa-light fa-user-plus"></i>
+                <span className="disappear"> Add User</span>
+              </Link>
+            </div>
+          ) : (
+            <div className="buttons">
+              <Link to="/" className="btn te">
+                <i className="fa fa-light fa-home"></i>
+                <span className="disappear"> Home</span>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
     </div>

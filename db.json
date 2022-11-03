@@ -12,28 +12,21 @@
       "address": "California Road 10, Dublin",
       "email": "p.clark@forusers.net",
       "phone": "567567889",
+      "id": 2
+    },
+    {
+      "name": "Peter Clark",
+      "address": "California Road 10, Dublin",
+      "email": "p.clark@forusers.net",
+      "phone": "567567889",
       "id": 3
     },
     {
-      "name": "Peter Clark",
-      "address": "California Road 10, Dublin",
-      "email": "p.clark@forusers.net",
-      "phone": "567567889",
+      "name": "Tommy Hilfinger",
+      "address": "Ohio 12",
+      "email": "tommy.h@to-mail.net",
+      "phone": "123123123",
       "id": 4
-    },
-    {
-      "name": "Peter Clark",
-      "address": "California Road 10, Dublin",
-      "email": "p.clark@forusers.net",
-      "phone": "567567889",
-      "id": 5
-    },
-    {
-      "name": "Peter Clark",
-      "address": "California Road 10, Dublin",
-      "email": "p.clark@forusers.net",
-      "phone": "567567889",
-      "id": 6
     }
   ]
 }

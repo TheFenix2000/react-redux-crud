@@ -11,3 +11,12 @@
 .te:hover {
     background-color: #43285e !important;
 }
+.disappear {
+    display: inline;
+}
+
+@media screen and (max-width: 300px){
+    .disappear {
+        display: none;
+    }
+}
